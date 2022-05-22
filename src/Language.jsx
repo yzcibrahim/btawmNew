@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect,useContext} from "react";
 import AddLng from "./AddLng";
 export default function Language(props){
 
@@ -6,12 +6,11 @@ export default function Language(props){
     const[refreshCount,setRefreshCount]=useState(false);
     const[lng,setLng]=useState({id:0,name:'',code:''})
     console.log(langs);
-
     useEffect(
         ()=>{
     fetch("http://localhost:12263/api/lang")
     .then((res)=>{return res.json()})
-    .then((response)=>{setLangs(response)})
+    .then((response)=>{setLangs(response);props.setLangsForapp(response)})
         },
         [refreshCount]
     )
