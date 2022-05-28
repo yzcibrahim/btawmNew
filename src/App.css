@@ -77,3 +77,6 @@
 .detailRowCollopsed{
   display: none;
 }
+
+.showElement{display: block;}
+.hideElement{display: none;}
