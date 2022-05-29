@@ -15,6 +15,7 @@ import {CountContext} from './Storage';
 import UserComponent from './UserComponent';
 import Login from './Login';
 import Cookies from 'universal-cookie';
+import TestWord from './TestWords';
 
 function App() {
  
@@ -66,6 +67,9 @@ const Logout=()=>{
             <li>
               <Link to="/users">Users</Link>
             </li>
+            <li>
+              <Link to="/test">Test</Link>
+            </li>
             
             <li className={token==''?'showElement':'hideElement'}>
               <Link to="/login">Login</Link>
@@ -84,6 +88,7 @@ const Logout=()=>{
           <Route path="/langs" element={<Language setLangsForapp={setLangs} cnt={count} />} />
           <Route path="/words" element={<Word token={token} setLangsForapp={setLangs} langs={langs} cnt={count} />} />
           <Route path="/users" element={<UserComponent token={token} />} /> 
+          <Route path="/test" element={<TestWord token={token} />} /> 
           <Route path="/login" element={<Login token={token} setToken={setToken} />} /> 
         
 
